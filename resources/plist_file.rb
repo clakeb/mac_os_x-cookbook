@@ -19,7 +19,8 @@
 
 actions :create
 
-attribute :source, :kind_of => String, :name_attribute => true
+attribute :plist, :kind_of => String, :name_attribute => true
+attribute :source, :kind_of => String, :default => ""
 attribute :cookbook, :kind_of => String, :default => ""
 
 def initialize(*args)

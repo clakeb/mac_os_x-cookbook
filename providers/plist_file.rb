@@ -18,11 +18,11 @@
 #
 
 action :create do
-  file "#{ENV['HOME']}/Library/Preferences/#{new_resource.source}.lockfile" do
+  file "#{ENV['HOME']}/Library/Preferences/#{new_resource.plist}.lockfile" do
     action :delete
   end
 
-  cookbook_file "#{ENV['HOME']}/Library/Preferences/#{File.basename(new_resource.source)}" do
+  cookbook_file "#{ENV['HOME']}/Library/Preferences/#{new_resource.plist}" do
     source new_resource.source
     cookbook new_resource.cookbook unless new_resource.cookbook.empty?
     ignore_failure true
