@@ -22,7 +22,7 @@ action :create do
     action :delete
   end
 
-  cookbook_file "#{ENV['HOME']}/Library/Preferences/#{new_resource.source}" do
+  cookbook_file "#{ENV['HOME']}/Library/Preferences/#{File.basename(new_resource.source)}" do
     source new_resource.source
     cookbook new_resource.cookbook unless new_resource.cookbook.empty?
     ignore_failure true
